@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="Journal" Height="450" Width="800">
     <Grid>
-        <Label Content="Eto jurnal" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45"/>
-
+        <StackPanel>
+            <Label Content="Фильтр"/>
+            <TextBox />
+            <ListBox x:Name="groups" ItemsSource(Binding Grop)>
+        </StackPanel>
     </Grid>
 </Window>

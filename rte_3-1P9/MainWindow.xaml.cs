@@ -21,8 +21,10 @@ namespace rte_3_1P9
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
+            User.CreateAdmin();
             InitializeComponent();
         }
 

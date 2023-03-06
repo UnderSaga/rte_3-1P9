@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using ClassLibrary1;
 
 namespace rte_3_1P9
 {
@@ -19,9 +21,14 @@ namespace rte_3_1P9
     /// </summary>
     public partial class Journal : Window
     {
+        public ObservableCollection<Grop> Grops;
         public Journal()
         {
             InitializeComponent();
+            using (var db = new DBContext())
+            {
+                db.Grops.ToList().ForEach(i => Grops.Add(i));
+            }
         }
     }
 }
