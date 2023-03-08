@@ -19,22 +19,6 @@ namespace ClassLibrary1
             {
                 var user = new User { Login = "Admin", PasswordHash = "Admin" };
                 db.Users.Add(user);
-                Special special = new Special { Code = 'П', Name = "Программисты" };
-                db.Specials.Add(special);
-                for (int y = 0; y < 4; y++)
-                {
-                    for (int sg = 0; sg < 2; sg++)
-                    {
-                        Grop grop = new Grop 
-                        { 
-                            ClassRoom = 9, 
-                            SubGroup = sg, 
-                            StartYear = 2019 + y, 
-                            Special = special
-                        };
-                        db.Grops.Add(grop);
-                    }        
-                }
                 db.SaveChanges();
             }
         }

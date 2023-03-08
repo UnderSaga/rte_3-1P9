@@ -25,6 +25,7 @@ namespace rte_3_1P9
         public MainWindow()
         {
             User.CreateAdmin();
+            Grop.CreateGrop();
             InitializeComponent();
         }
 
