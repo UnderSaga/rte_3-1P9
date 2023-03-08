@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using ClassLibrary1;
+using System.Text.RegularExpressions;
 
 namespace rte_3_1P9
 {
@@ -27,7 +28,11 @@ namespace rte_3_1P9
             InitializeComponent();
             using (var db = new DBContext())
             {
-                dataGrid1.ItemsSource = db.Grops.ToList();
+                List<Grop> GropList = db.Grops.ToList();
+                foreach (Grop grop in GropList)
+                {
+                    grops.Items.Add(grop);
+                }
             }
         }
     }

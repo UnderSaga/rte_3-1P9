@@ -10,8 +10,7 @@
         <StackPanel>
             <Label Content="Фильтр"/>
             <TextBox />
-            <ListBox x:Name="groups"/>
-            <DataGrid Name="dataGrid1"/>
+            <ListBox x:Name="grops" ItemsSource="{Binding Grops}" DisplayMemberPath="Namegrop"/>
         </StackPanel>
     </Grid>
 </Window>

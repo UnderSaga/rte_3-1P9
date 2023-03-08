@@ -13,12 +13,13 @@ namespace ClassLibrary1
         public int ClassRoom { get; set; }
         public Special Special { get; set; }
         public int StartYear { get; set; }
-
+        public string Namegrop { get; set; }
 
         public static void CreateGrop()
         {
             using (var db = new DBContext())
             {
+                db.Database.Delete();
                 Special special = new Special { Code = "П", Name = "Программисты" };
                 db.Specials.Add(special);
                 for (int y = 0; y < 4; y++)
@@ -32,6 +33,7 @@ namespace ClassLibrary1
                             StartYear = 2019 + y,
                             Special = special
                         };
+                        grop.Namegrop = grop.GetCode();
                         db.Grops.Add(grop);
                     }
                 }
@@ -39,13 +41,11 @@ namespace ClassLibrary1
             }
         }
 
-
         public string GetCode()
         {
             int kourse = DateTime.Now.Year - StartYear;
             if (DateTime.Now.Month >= 9)
                 kourse++;
-            
             return $"{kourse}-{SubGroup}{Special?.Code}{ClassRoom}";
         }
     }

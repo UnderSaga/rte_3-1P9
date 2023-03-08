@@ -15,6 +15,7 @@
                         SubGroup = c.Int(nullable: false),
                         ClassRoom = c.Int(nullable: false),
                         StartYear = c.Int(nullable: false),
+                        Name = c.String(),
                         Special_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
@@ -26,6 +27,7 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        Code = c.String(),
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
