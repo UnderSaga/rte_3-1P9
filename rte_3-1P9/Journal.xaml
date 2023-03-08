@@ -10,7 +10,7 @@
         <StackPanel>
             <Label Content="Фильтр"/>
             <TextBox />
-            <ListBox x:Name="groups" ItemsSource = "{Binding Grop}" />
+            <ListBox x:Name="groups"/>
         </StackPanel>
     </Grid>
 </Window>
