@@ -2,7 +2,8 @@
 {
     public class Special
     {
-        public char Code { get; internal set; }
+        public string Id { get; set; }
+        public char Code { get; set; }
         public string Name { get; set; }
     }
 }

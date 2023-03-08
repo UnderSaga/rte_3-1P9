@@ -17,15 +17,14 @@ namespace ClassLibrary1
         {
             using (var db = new DBContext())
             {
-                db.Database.Delete();
                 var user = new User { Login = "Admin", PasswordHash = "Admin" };
                 db.Users.Add(user);
                 Special special = new Special { Code = 'П', Name = "Программисты" };
+                db.Specials.Add(special);
                 for (int y = 0; y < 4; y++)
                 {
                     for (int sg = 0; sg < 2; sg++)
                     {
-
                         Grop grop = new Grop 
                         { 
                             ClassRoom = 9, 
@@ -45,8 +44,14 @@ namespace ClassLibrary1
             {
                 using (var db = new DBContext())
                 {
-                    var users = db.Users.Where(u => u.Login == login && u.PasswordHash == password);
-                    return users.Count() == 1 ? users.First() : null;
+                    try
+                    {
+                        return db.Users.Where(u => u.Login == login && u.PasswordHash == password).First();
+                    }
+                    catch
+                    {
+                        return null;
+                    }
                 }
             }
         }
