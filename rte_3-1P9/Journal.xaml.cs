@@ -27,7 +27,7 @@ namespace rte_3_1P9
             InitializeComponent();
             using (var db = new DBContext())
             {
-                db.Grops.ToList().ForEach(i => Grops.Add(i));
+                dataGrid1.ItemsSource = db.Grops.ToList();
             }
         }
     }

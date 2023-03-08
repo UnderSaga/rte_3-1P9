@@ -11,6 +11,7 @@
             <Label Content="Фильтр"/>
             <TextBox />
             <ListBox x:Name="groups"/>
+            <DataGrid Name="dataGrid1"/>
         </StackPanel>
     </Grid>
 </Window>

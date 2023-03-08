@@ -24,8 +24,11 @@ namespace rte_3_1P9
 
         public MainWindow()
         {
+            using (var db = new DBContext())
+            {
+                db.Database.Delete();
+            }
             User.CreateAdmin();
-            Grop.CreateGrop();
             InitializeComponent();
         }
 
@@ -41,6 +44,7 @@ namespace rte_3_1P9
                 Hide();
                 Journal journal = new Journal();
                 journal.ShowDialog();
+                Grop.CreateGrop();
                 Show();
             }
         }
